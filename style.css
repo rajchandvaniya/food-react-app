@@ -1,0 +1,119 @@
+#root {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.body-container {
+    background-color: rgb(250 244 244);
+}
+
+/* HEADER CSS */
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+    flex-wrap: wrap;
+}
+
+.header > ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.header > ul > li {
+    padding: 30px;
+}
+
+.header > img {
+    height: 100px
+}
+
+.header > ul > li > img {
+    height: 40px;
+}
+
+/* FOOTER CSS */
+.footer {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: small;
+    background-color: #f9601d;
+    color: white;
+}
+
+/* BODY CSS */
+.body {
+    display: flex;
+    justify-content: space-evenly ;
+    flex-wrap: wrap;
+}
+
+.restaurant-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 260px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.restaurant-card img {
+    width: 100%;
+}
+
+.shimmer {
+    height: 380px;
+}
+.shimmer-img {
+    background-color: lightgray;
+    width: 250px;
+    height: 157px;
+}
+
+.shimmer-btn {
+    background-color: lightgray;
+    border: 0px;
+    padding: 8px;
+    height: 36px;
+}
+
+.location-rating {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-to-cart-button {
+    background-color: #f9601d;
+    border: 0px;
+    padding: 10px;
+    color: white;
+}
+
+.search-box {
+    padding: 7px;
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 0px;
+}
+
+.search-btn {
+    background-color: #f9601d;
+    border: 0px;
+    padding: 8px;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
