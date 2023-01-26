@@ -22,11 +22,12 @@
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    padding-left: 0px;
 }
 
 .header > ul > li {
-    padding: 30px;
+    padding: 16px;
 }
 
 .header > img {
@@ -78,7 +79,7 @@
 }
 .shimmer-img {
     background-color: lightgray;
-    width: 250px;
+    width: 260px;
     height: 157px;
 }
 

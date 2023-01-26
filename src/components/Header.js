@@ -7,16 +7,16 @@ const Header = () => {
       <img src={PRABODHAM_LOGO_IMAGE} />
       <ul>
         <li>
-          <h3>Home</h3>
+          <h4>Home</h4>
         </li>
         <li>
-          <h3>About</h3>
+          <h4>About</h4>
         </li>
         <li>
-          <h3>Contact Us</h3>
+          <h4>Contact Us</h4>
         </li>
         <li>
-          <h3>Cart</h3>
+          <h4>Cart</h4>
         </li>
       </ul>
     </div>

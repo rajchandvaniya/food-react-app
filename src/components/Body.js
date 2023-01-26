@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from "react";
 import RestaurantCard from "./restaurantCard";
 import Shimmer from "./shimmer";
+import allRestaurantsData from "../data/allRestaurants";
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
+  const [allRestaurants, setAllRestaurants] = useState([]);
   const [restaurants, setRestaurants] = useState([]);
 
   useEffect(() => {
     fetchAllRestaurants();
   }, []);
 
-  async function fetchAllRestaurants() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.1007377&lng=72.84849520000002&page_type=DESKTOP_WEB_LISTING"
-    );
-    const response = await data.json();
-    const restaurants = response?.data?.cards[2]?.data?.data?.cards;
-    setRestaurants(restaurants);
+  function fetchAllRestaurants() {
+    const response = allRestaurantsData;
+    const restaurantsCards = response?.data?.cards[2]?.data?.data?.cards;
+    setAllRestaurants(restaurantsCards);
+    setRestaurants(restaurantsCards);
   }
 
-  if (restaurants.length === 0) return <Shimmer />;
+  if (allRestaurants.length === 0) return <Shimmer />;
   else
     return (
       <>
@@ -30,11 +30,14 @@ const Body = () => {
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
+              setRestaurants(filterData(e.target.value, allRestaurants));
             }}
           />
           <button
             className="search-btn"
-            onClick={() => setRestaurants(filterData(searchText))}
+            onClick={() =>
+              setRestaurants(filterData(searchText, allRestaurants))
+            }
           >
             Search
           </button>
@@ -53,8 +56,8 @@ const Body = () => {
     );
 };
 
-function filterData(searchText) {
-  return restaurantData.filter((restaurant) =>
+function filterData(searchText, allRestaurants) {
+  return allRestaurants.filter((restaurant) =>
     restaurant.data.name.toLowerCase().includes(searchText.toLowerCase())
   );
 }
