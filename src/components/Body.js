@@ -13,10 +13,13 @@ const Body = () => {
   }, []);
 
   function fetchAllRestaurants() {
-    const response = allRestaurantsData;
-    const restaurantsCards = response?.data?.cards[2]?.data?.data?.cards;
-    setAllRestaurants(restaurantsCards);
-    setRestaurants(restaurantsCards);
+    // Mocking the API call with setTimeout
+    setTimeout(() => {
+      const response = allRestaurantsData;
+      const restaurantsCards = response?.data?.cards[2]?.data?.data?.cards;
+      setAllRestaurants(restaurantsCards);
+      setRestaurants(restaurantsCards);
+    }, 2000);
   }
 
   if (allRestaurants.length === 0) return <Shimmer />;
